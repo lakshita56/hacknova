@@ -1,68 +1,200 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+/* General reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+/* Navbar */
+.navbar {
+  background: #1e293b;
+  color: white;
+  padding: 1rem 2rem;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
-button {
+/* Dashboard container */
+.dashboard {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: white;
   border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.dashboard h2 {
+  margin-bottom: 0.5rem;
+  color: #1e293b;
+}
+
+.dashboard p {
+  margin-bottom: 1.5rem;
+  color: #555;
+}
+
+/* Expense Form */
+.expense-form {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.expense-form input {
+  flex: 1;
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.expense-form button {
+  padding: 0.7rem 1.5rem;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+.expense-form button:hover {
+  background: #1e40af;
+}
+
+/* Expense List */
+.expense-list {
+  list-style: none;
+}
+
+.expense-list li {
+  display: flex;
+  justify-content: space-between;
+  background: #f3f4f6;
+  padding: 0.8rem 1rem;
+  margin-bottom: 0.7rem;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.expense-list li span {
+  font-weight: bold;
+  color: #2563eb;
+}
+
+/* Total Expenses */
+.total {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: #e0f2fe;
+  border: 1px solid #38bdf8;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #0c4a6e;
+}
+/* Filters */
+.filters {
+  margin-bottom: 20px;
+}
+
+.filters button {
+  padding: 8px 12px;
+  margin-right: 8px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  background: #f9f9f9;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.filters button:hover {
+  background: #ddd;
+}
+
+.filters .active {
+  background: #333;
+  color: white;
+}
+
+/* Expense List */
+.expense-list {
+  list-style: none;
+  padding: 0;
+}
+
+.expense-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  align-items: center;
+}
+
+.expense-list li button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: red;
+}
+
+.expense-list li button:hover {
+  transform: scale(1.2);
+}
+
+/* Highlight high expenses */
+.high-expense {
+  background: #ffe5e5;
+  font-weight: bold;
+}
+.auth-form {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: #f9f9f9;
+}
+
+.auth-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.auth-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-form input {
+  margin-bottom: 12px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.auth-form button {
+  padding: 10px;
+  background: #333;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.auth-form button:hover {
+  background: #555;
 }
